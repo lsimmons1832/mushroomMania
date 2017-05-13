@@ -1,1 +1,3 @@
-console.log("I'm linked");
+app.run((FIREBASE_CONFIG) =>{
+ firebase.initializeApp(FIREBASE_CONFIG);
+});

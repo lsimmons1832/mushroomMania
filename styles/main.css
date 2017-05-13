@@ -1,2 +1,9 @@
 body {
-  background-color: #1C0B19; }
+  background-color: #4EA699;
+  color: #1C0B19; }
+  body .header {
+    text-align: center;
+    color: #1C0B19; }
+  body .form-group {
+    text-align: center;
+    font-size: 16px; }

@@ -1,5 +1,16 @@
 @import 'colors';
 
 body{
-	background-color: $LICORICE;
+	background-color: $POLISHEDPINE;
+	color: $LICORICE;
+
+	.header{
+		text-align: center;
+		color: $LICORICE;
+	}
+
+	.form-group{
+		text-align: center;
+		font-size: 16px;
+	}
 }

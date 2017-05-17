@@ -1,1 +1,1 @@
-var app = angular.module("AddressBook", []);
+var app = angular.module("MushroomMania", []);

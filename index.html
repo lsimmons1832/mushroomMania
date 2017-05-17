@@ -5,27 +5,30 @@
 	<link rel="stylesheet" type="text/css" href="/lib/bower_components/bootstrap/dist/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="/styles/main.css">
 </head>
-<body ng-app="AddressBook">
-	<div class="header" ng-controller="ItemCtrl">
-		<h1>MUSHROOM MANIA</h1>
+<body ng-app="MushroomMania">
+	<div class="jumbotron">
+		<h1 class="list-inline center-block text-center">MUSHROOM MANIA</h1>
   </div>
-		<div class="row">
-		  <div class="col-xs-8 col-xs-offset-2">
+		<div class="row" ng-controller="ItemCtrl">
+		  <div class="col-xs-8 col-xs-offset-2" ng-show="showListView">
 		  	<div class="form-group">
 		    <label for="SearchDirectory">Search SHROOM Directory</label>
-		    <input type="text" class="form-control" id="SearchDirectory" placeholder="Enter Mushroom Name Here...">
-		    <input type="radio" class="radio-inline" id="Poisonous" placeholder="jane.doe@example.com">
+		    <input type="text" class="form-control" id="SearchDirectory" placeholder="Enter Mushroom Name Here..." ng-model="searchText">
+		    <input type="radio" class="radio-inline" id="Poisonous" ng-model="consumable" value="false" placeholder="jane.doe@example.com">
 		    <label for="Poisonous">Poisonous</label>
-		    <input type="radio" class="radio-inline" id="Non-poisonous" placeholder="jane.doe@example.com">
+		    <input type="radio" class="radio-inline" id="Non-poisonous" ng-model="consumable" value="true" placeholder="jane.doe@example.com">
 		    <label for="Non-poisonous">Non-poisonous</label>
 <!-- 		  <button type="submit" class="btn btn-default">Send invitation</button> -->
+				<div class="container" ng-repeat="item in mushroomItems | filter: searchText |filter: consumable">
+					<h2>{{item.name}}</h2>
+					<p>{{item.description}}</p>
+				</div> 
 		 </div>
 		</div>
 	</div>
-	<div class="container">
-		
-	</div>
 
+
+	<script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
 	<script src="/lib/bower_components/jquery/dist/jquery.js"></script>
 	<script src="/lib/bower_components/bootstrap/dist/js/bootstrap.js"></script>
 	<script src="/lib/bower_components/angular/angular.min.js"></script>

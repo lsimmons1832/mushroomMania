@@ -1,6 +1,8 @@
 body {
   background-color: #4EA699;
   color: #1C0B19; }
+  body .jumbrotron {
+    background-color: #6FEDB7; }
   body .header {
     text-align: center;
     color: #1C0B19; }
